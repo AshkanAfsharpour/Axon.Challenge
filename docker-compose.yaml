@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  Axon.WebApi:
+    image: axon/webapi:${TAG:-1.0.0-release}
+    container_name: Axon.WebApi
+    environment:
+      - ASPNETCORE_URLS=http://*:80
+    build:
+        context: .
+        dockerfile: ./src/WebApi/Dockerfile
+    networks:
+        - Axon
+    restart: always
+  
+networks:
+  Axon:
+    external: true  

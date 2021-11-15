@@ -1,0 +1,4 @@
+// can only be used within dotnet core targeted projects.
+
+dotnet-ef dbcontext scaffold "Server=.;Initial Catalog=Axon;Integrated Security=true; Max Pool Size =1000;Connect Timeout=50;ConnectRetryCount=10" Microsoft.EntityFrameworkCore.SqlServer --output-dir Entities -f
+
